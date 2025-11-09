@@ -197,7 +197,7 @@
     "motor": "---",
     "puntos": 0, 
     "fotoURL": "assets/pilotos/misterio.png",
-    "logoURL": "assets/logos/.png"
+    "logoURL": "assets/logos/racing.png"
   },
     {
     "piloto": "Por Confirmar", 
@@ -207,7 +207,7 @@
     "motor": "---",
     "puntos": 0, 
     "fotoURL": "assets/pilotos/misterio.png",
-    "logoURL": "assets/logos/.png"
+    "logoURL": "assets/logos/racing.png"
   },
     {
     "piloto": "Por Confirmar", 
@@ -217,6 +217,6 @@
     "motor": "---",
     "puntos": 0, 
     "fotoURL": "assets/pilotos/misterio.png",
-    "logoURL": "assets/logos/.png"
+    "logoURL": "assets/logos/redbull.png"
   }
 ]

@@ -54,6 +54,12 @@
     "logoURL": "assets/logos/cadillac.png"
   },
   {
+    "equipo": "Racing Bulls", 
+    "puntos": 0, 
+    "motor": "Red Bull Ford",
+    "logoURL": "assets/logos/racing.png"
+  },
+  {
     "equipo": "Audi", 
     "puntos": 0, 
     "motor": "Audi",
