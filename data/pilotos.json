@@ -1,0 +1,23 @@
+[
+  {
+    "piloto": "Max Verstappen", 
+    "equipo": "Red Bull Racing", 
+    "puntos": 450, 
+    "fotoURL": "assets/pilotos/verstappen.png",
+    "logoURL": "assets/logos/redbull.png"
+  },
+  {
+    "piloto": "Lando Norris", 
+    "equipo": "McLaren", 
+    "puntos": 350, 
+    "fotoURL": "assets/pilotos/norris.png",
+    "logoURL": "assets/logos/mclaren.png"
+  },
+  {
+    "piloto": "Charles Leclerc", 
+    "equipo": "Ferrari", 
+    "puntos": 320, 
+    "fotoURL": "assets/pilotos/leclerc.png",
+    "logoURL": "assets/logos/ferrari.png"
+  }
+]

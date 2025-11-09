@@ -1,0 +1,17 @@
+[
+  {
+    "equipo": "Red Bull Racing", 
+    "puntos": 700, 
+    "logoURL": "assets/logos/redbull.png"
+  },
+  {
+    "equipo": "Ferrari", 
+    "puntos": 550, 
+    "logoURL": "assets/logos/ferrari.png"
+  },
+  {
+    "equipo": "McLaren", 
+    "puntos": 500, 
+    "logoURL": "assets/logos/mclaren.png"
+  }
+]

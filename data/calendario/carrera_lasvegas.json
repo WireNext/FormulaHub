@@ -1,0 +1,8 @@
+{
+  "id": 1,
+  "carrera": "Gran Premio de Las Vegas",
+  "pista": "Circuito Urbano de Las Vegas",
+  "fecha": "2025-11-23T06:00:00Z",
+  "timeZone": "GMT",
+  "trackURL": "assets/tracks/lasvegas.svg"
+}

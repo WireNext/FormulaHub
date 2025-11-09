@@ -1,0 +1,193 @@
+/* Variables de Color */
+:root {
+    --f1-red: #e10600;
+    --background-color: #f0f0f0;
+    --card-background: #ffffff;
+    --text-color: #333;
+    --live-green: #27ae60;
+    --countdown-amber: #f39c12;
+    --finished-gray: #95a5a6;
+    --border-color: #ddd;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+/* --- Header y Footer --- */
+header {
+    background-color: var(--f1-red);
+    color: white;
+    padding: 25px 20px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    margin: 0 0 5px 0;
+    font-size: 2.2em;
+}
+
+header p {
+    margin: 0;
+    opacity: 0.8;
+}
+
+footer {
+    text-align: center;
+    padding: 15px;
+    margin-top: 30px;
+    background-color: var(--text-color);
+    color: white;
+    font-size: 0.9em;
+}
+
+/* --- Estructura General --- */
+.container {
+    max-width: 1400px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+.section {
+    background-color: var(--card-background);
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.section h2 {
+    color: var(--f1-red);
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 10px;
+    margin-top: 0;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid var(--border-color);
+    margin: 40px 0;
+}
+
+/* --- Tablas (Standings) --- */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+th, td {
+    padding: 12px;
+    border-bottom: 1px solid var(--border-color);
+    text-align: left;
+    vertical-align: middle;
+}
+
+th {
+    background-color: #eee;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.9em;
+}
+
+/* Imágenes dentro de tablas */
+.piloto-foto {
+    width: 40px; 
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+}
+
+.equipo-logo {
+    width: 30px; 
+    height: 30px;
+    object-fit: contain;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+/* --- Calendario (Grid) --- */
+#calendario-list {
+    display: grid;
+    /* Adapta el número de columnas automáticamente */
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 25px;
+    margin-top: 15px;
+}
+
+.carrera-card {
+    border: 1px solid var(--border-color);
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #fafafa;
+    transition: opacity 0.3s ease;
+}
+
+.carrera-card h3 {
+    margin-top: 0;
+    color: var(--text-color);
+    font-size: 1.4em;
+    border-bottom: 1px dashed #ccc;
+    padding-bottom: 10px;
+}
+
+.track-schema {
+    width: 100%;
+    max-height: 200px; /* Limita la altura del esquema de pista */
+    object-fit: contain;
+    margin: 15px 0;
+    border-radius: 4px;
+    border: 1px solid #eee;
+    padding: 5px;
+}
+
+/* --- Estilos de Estado Dinámico --- */
+.estado {
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 15px;
+    display: inline-block;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.cuenta-regresiva {
+    background-color: var(--countdown-amber); 
+}
+
+.en-directo {
+    background-color: var(--live-green); 
+    /* Efecto de parpadeo sutil */
+    animation: blink 1s infinite alternate; 
+}
+
+.finalizada {
+    background-color: var(--finished-gray); 
+    opacity: 0.9;
+}
+
+@keyframes blink {
+    from { opacity: 1; }
+    to { opacity: 0.7; }
+}
+
+/* Responsive básico para pantallas muy pequeñas */
+@media (max-width: 600px) {
+    .container {
+        padding: 0 10px;
+    }
+    th, td {
+        padding: 8px;
+        font-size: 0.9em;
+    }
+}
