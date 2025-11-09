@@ -157,7 +157,7 @@ function actualizarEstadoCarrera(carrera, card, statusElement) {
     const tiempoFin = tiempoInicio + DURACION_CARRERA;
     const diferencia = tiempoInicio - ahora;
 
-    statusElement.classList.remove('cuenta-atrás', 'en-directo', 'finalizada');
+    statusElement.classList.remove('cuenta-atras', 'en-directo', 'finalizada');
 
     if (diferencia > DURACION_EN_DIRECTO) {
         // --- Cuenta Regresiva ---
@@ -166,8 +166,8 @@ function actualizarEstadoCarrera(carrera, card, statusElement) {
         const minutos = Math.floor((diferencia % (1000 * 60 * 60)) / (1000 * 60));
         const segundos = Math.floor((diferencia % (1000 * 60)) / 1000);
 
-        statusElement.textContent = `Cuenta atrás: ${dias}d ${horas}h ${minutos}m ${segundos}s`;
-        statusElement.classList.add('cuenta-atrás');
+        statusElement.textContent = `Cuenta atras: ${dias}d ${horas}h ${minutos}m ${segundos}s`;
+        statusElement.classList.add('cuenta-atras');
         card.style.opacity = 1;
 
     } else if (ahora < tiempoFin) {
