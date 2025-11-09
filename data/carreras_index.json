@@ -1,3 +1,26 @@
 [
-  "data/calendario/carrera_lasvegas.json"
+  "data/calendario/01_australia.json",
+  "data/calendario/02_china.json",
+  "data/calendario/03_japon.json",
+  "data/calendario/04_barein.json",
+  "data/calendario/05_arabia_saudita.json",
+  "data/calendario/06_miami.json",
+  "data/calendario/07_canada.json",
+  "data/calendario/08_monaco.json",
+  "data/calendario/09_barcelona.json",
+  "data/calendario/10_austria.json",
+  "data/calendario/11_gran_bretaña.json",
+  "data/calendario/12_belgica.json",
+  "data/calendario/13_hungria.json",
+  "data/calendario/14_paises_bajos.json",
+  "data/calendario/15_italia.json",
+  "data/calendario/16_madrid.json",
+  "data/calendario/17_azerbaiyan.json",
+  "data/calendario/18_singapur.json",
+  "data/calendario/19_estados_unidos.json",
+  "data/calendario/20_mexico.json",
+  "data/calendario/21_sao_paulo.json",
+  "data/calendario/22_las_vegas.json",
+  "data/calendario/23_catar.json",
+  "data/calendario/24_abu_dabi.json"
 ]

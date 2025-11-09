@@ -1,17 +1,62 @@
 [
   {
-    "equipo": "Red Bull Racing", 
-    "puntos": 700, 
-    "logoURL": "assets/logos/redbull.png"
-  },
-  {
     "equipo": "Ferrari", 
-    "puntos": 550, 
+    "puntos": 0, 
+    "motor": "Ferrari",
     "logoURL": "assets/logos/ferrari.png"
   },
   {
     "equipo": "McLaren", 
-    "puntos": 500, 
+    "puntos": 0, 
+    "motor": "Mercedes",
     "logoURL": "assets/logos/mclaren.png"
+  },
+  {
+    "equipo": "Red Bull Racing", 
+    "puntos": 0, 
+    "motor": "Red Bull Ford",
+    "logoURL": "assets/logos/redbull.png"
+  },
+  {
+    "equipo": "Mercedes", 
+    "puntos": 0, 
+    "motor": "Mercedes",
+    "logoURL": "assets/logos/mercedes.png"
+  },
+  {
+    "equipo": "Aston Martin Aramco", 
+    "puntos": 0, 
+    "motor": "Honda",
+    "logoURL": "assets/logos/aston_martin.png"
+  },
+  {
+    "equipo": "Williams", 
+    "puntos": 0, 
+    "motor": "Mercedes",
+    "logoURL": "assets/logos/ Williams.png"
+  },
+  {
+    "equipo": "Alpine", 
+    "puntos": 0, 
+    "motor": "Mercedes",
+    "logoURL": "assets/logos/alpine.png"
+  },
+  {
+    "equipo": "Haas", 
+    "puntos": 0, 
+    "motor": "Ferrari",
+    "logoURL": "assets/logos/haas.png"
+  },
+  {
+    "equipo": "Cadillac", 
+    "puntos": 0, 
+    "motor": "Ferrari",
+    "logoURL": "assets/logos/cadillac.png"
+  },
+  {
+    "equipo": "Audi", 
+    "puntos": 0, 
+    "motor": "Audi",
+    "logoURL": "assets/logos/audi.png"
   }
 ]

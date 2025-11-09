@@ -1,23 +1,192 @@
 [
   {
     "piloto": "Max Verstappen", 
+    "dorsal": 33,
+    "siglas": "VER",
     "equipo": "Red Bull Racing", 
-    "puntos": 450, 
+    "motor": "Red Bull Ford",
+    "puntos": 0, 
     "fotoURL": "assets/pilotos/verstappen.png",
     "logoURL": "assets/logos/redbull.png"
   },
   {
+    "piloto": "George Russell", 
+    "dorsal": 63,
+    "siglas": "RUS",
+    "equipo": "Mercedes", 
+    "motor": "Mercedes",
+    "puntos": 0, 
+    "fotoURL": "assets/pilotos/russell.png",
+    "logoURL": "assets/logos/mercedes.png"
+  },
+  {
+    "piloto": "Charles Leclerc", 
+    "dorsal": 16,
+    "siglas": "LEC",
+    "equipo": "Ferrari", 
+    "motor": "Ferrari",
+    "puntos": 0, 
+    "fotoURL": "assets/pilotos/leclerc.png",
+    "logoURL": "assets/logos/ferrari.png"
+  },
+  {
     "piloto": "Lando Norris", 
+    "dorsal": 4,
+    "siglas": "NOR",
     "equipo": "McLaren", 
-    "puntos": 350, 
+    "motor": "Mercedes",
+    "puntos": 0, 
     "fotoURL": "assets/pilotos/norris.png",
     "logoURL": "assets/logos/mclaren.png"
   },
   {
-    "piloto": "Charles Leclerc", 
+    "piloto": "Fernando Alonso", 
+    "dorsal": 14,
+    "siglas": "ALO",
+    "equipo": "Aston Martin Aramco", 
+    "motor": "Honda",
+    "puntos": 0, 
+    "fotoURL": "assets/pilotos/alonso.png",
+    "logoURL": "assets/logos/aston_martin.png"
+  },
+  {
+    "piloto": "Lewis Hamilton", 
+    "dorsal": 44,
+    "siglas": "HAM",
     "equipo": "Ferrari", 
-    "puntos": 320, 
-    "fotoURL": "assets/pilotos/leclerc.png",
+    "motor": "Ferrari",
+    "puntos": 0, 
+    "fotoURL": "assets/pilotos/hamilton.png",
     "logoURL": "assets/logos/ferrari.png"
+  },
+  {
+    "piloto": "Oscar Piastri", 
+    "dorsal": 81,
+    "siglas": "PIA",
+    "equipo": "McLaren", 
+    "motor": "Mercedes",
+    "puntos": 0, 
+    "fotoURL": "assets/pilotos/piastri.png",
+    "logoURL": "assets/logos/mclaren.png"
+  },
+  {
+    "piloto": "Alexander Albon", 
+    "dorsal": 23,
+    "siglas": "ALB",
+    "equipo": "Williams", 
+    "motor": "Mercedes",
+    "puntos": 0, 
+    "fotoURL": "assets/pilotos/albon.png",
+    "logoURL": "assets/logos/ Williams.png"
+  },
+  {
+    "piloto": "Carlos Sainz Jr.", 
+    "dorsal": 55,
+    "siglas": "SAI",
+    "equipo": "Williams", 
+    "motor": "Mercedes",
+    "puntos": 0, 
+    "fotoURL": "assets/pilotos/sainz.png",
+    "logoURL": "assets/logos/ Williams.png"
+  },
+  {
+    "piloto": "Pierre Gasly", 
+    "dorsal": 10,
+    "siglas": "GAS",
+    "equipo": "Alpine", 
+    "motor": "Mercedes",
+    "puntos": 0, 
+    "fotoURL": "assets/pilotos/gasly.png",
+    "logoURL": "assets/logos/alpine.png"
+  },
+  {
+    "piloto": "Esteban Ocon", 
+    "dorsal": 31,
+    "siglas": "OCO",
+    "equipo": "Haas", 
+    "motor": "Ferrari",
+    "puntos": 0, 
+    "fotoURL": "assets/pilotos/ocon.png",
+    "logoURL": "assets/logos/haas.png"
+  },
+  {
+    "piloto": "Nico Hülkenberg", 
+    "dorsal": 27,
+    "siglas": "HÜL",
+    "equipo": "Audi", 
+    "motor": "Audi",
+    "puntos": 0, 
+    "fotoURL": "assets/pilotos/hulkenberg.png",
+    "logoURL": "assets/logos/audi.png"
+  },
+  {
+    "piloto": "Sergio Pérez", 
+    "dorsal": 11,
+    "siglas": "PER",
+    "equipo": "Cadillac", 
+    "motor": "Ferrari",
+    "puntos": 0, 
+    "fotoURL": "assets/pilotos/perez.png",
+    "logoURL": "assets/logos/cadillac.png"
+  },
+  {
+    "piloto": "Valtteri Bottas", 
+    "dorsal": 77,
+    "siglas": "BOT",
+    "equipo": "Cadillac", 
+    "motor": "Ferrari",
+    "puntos": 0, 
+    "fotoURL": "assets/pilotos/bottas.png",
+    "logoURL": "assets/logos/cadillac.png"
+  },
+  {
+    "piloto": "Oliver Bearman", 
+    "dorsal": 87,
+    "siglas": "BEA",
+    "equipo": "Haas", 
+    "motor": "Ferrari",
+    "puntos": 0, 
+    "fotoURL": "assets/pilotos/bearman.png",
+    "logoURL": "assets/logos/haas.png"
+  },
+  {
+    "piloto": "Franco Colapinto", 
+    "dorsal": 43,
+    "siglas": "COL",
+    "equipo": "Alpine", 
+    "motor": "Mercedes",
+    "puntos": 0, 
+    "fotoURL": "assets/pilotos/colapinto.png",
+    "logoURL": "assets/logos/alpine.png"
+  },
+  {
+    "piloto": "Lance Stroll", 
+    "dorsal": 18,
+    "siglas": "STR",
+    "equipo": "Aston Martin Aramco", 
+    "motor": "Honda",
+    "puntos": 0, 
+    "fotoURL": "assets/pilotos/stroll.png",
+    "logoURL": "assets/logos/aston_martin.png"
+  },
+  {
+    "piloto": "Gabriel Bortoleto", 
+    "dorsal": 5,
+    "siglas": "BOR",
+    "equipo": "Audi", 
+    "motor": "Audi",
+    "puntos": 0, 
+    "fotoURL": "assets/pilotos/bortoleto.png",
+    "logoURL": "assets/logos/audi.png"
+  },
+  {
+    "piloto": "Andrea Kimi Antonelli", 
+    "dorsal": 12,
+    "siglas": "ANT",
+    "equipo": "Mercedes", 
+    "motor": "Mercedes",
+    "puntos": 0, 
+    "fotoURL": "assets/pilotos/antonelli.png",
+    "logoURL": "assets/logos/mercedes.png"
   }
 ]
