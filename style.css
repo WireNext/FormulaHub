@@ -54,25 +54,57 @@ footer {
     padding: 0 20px;
 }
 
-.section {
-    background-color: transparent;
-    padding: 0; 
-    margin-bottom: 25px;
-    border-radius: 0;
-    box-shadow: none;
-}
-
-.section h2 {
-    color: var(--f1-red);
-    border-bottom: 2px solid var(--border-color);
-    padding-bottom: 10px;
-    margin-top: 0;
-}
-
 hr {
     border: none;
     border-top: 1px solid var(--border-color);
     margin: 40px 0;
+}
+
+/* --- Contenedores Desplegables (<details>) --- */
+.f1-card {
+    margin-bottom: 25px;
+    border-radius: 10px;
+    background-color: var(--card-background);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    /* El padding se gestiona dentro de summary y .details-content */
+    padding: 0; 
+}
+
+summary {
+    cursor: pointer;
+    list-style: none; /* Oculta el triángulo de detalle nativo */
+    display: block; 
+    position: relative;
+    padding: 25px; /* Padding superior e inferior para el encabezado */
+}
+
+/* Estilo del contenido interior (tablas/calendario) */
+.details-content {
+    padding: 0 25px 25px 25px; /* Padding lateral e inferior */
+}
+
+/* Título principal (h2) dentro del summary */
+summary h2 {
+    color: var(--f1-red);
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 10px;
+    margin: 0;
+    display: block; /* Ocupa todo el ancho para que el borde se vea bien */
+}
+
+/* Estilo para el ícono de abrir/cerrar */
+summary::after {
+    content: '▶'; 
+    font-size: 1.2em;
+    position: absolute;
+    right: 25px; 
+    top: 50%;
+    transform: translateY(-50%);
+    transition: transform 0.2s ease;
+}
+
+details[open] > summary::after {
+    transform: translateY(-50%) rotate(90deg); /* Gira la flecha cuando está abierto */
 }
 
 /* --- Tablas (Standings) --- */
@@ -190,50 +222,4 @@ th {
         padding: 8px;
         font-size: 0.9em;
     }
-}
-
-details {
-    margin-bottom: 20px;
-    border-radius: 10px;
-    background-color: var(--card-background); /* Fondo de la tarjeta ahora en el details */
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    padding: 25px; /* Padding aplicado a toda la tarjeta */
-}
-
-summary {
-    cursor: pointer;
-    list-style: none; /* Oculta el triángulo de detalle nativo */
-    /* Usamos 'list-style-type: none;' para ocultar el triángulo por defecto */
-    display: block; 
-    position: relative;
-    /* Ajuste para crear un "toggle" visual */
-    padding-right: 30px; 
-}
-
-summary h2 {
-    color: var(--f1-red);
-    padding-bottom: 10px;
-    margin-top: 0;
-    margin-bottom: 15px; /* Espacio entre título y contenido */
-    border-bottom: 2px solid var(--border-color);
-    display: inline-block;
-}
-
-/* Estilo para el ícono de abrir/cerrar (opcional) */
-summary::after {
-    content: '▶'; /* Triángulo a la derecha */
-    font-size: 1.2em;
-    position: absolute;
-    right: 0;
-    top: 5px;
-    transition: transform 0.2s ease;
-}
-
-details[open] > summary::after {
-    content: '▼'; /* Triángulo hacia abajo cuando está abierto */
-}
-
-/* El contenido real dentro del details (tablas/calendario) */
-.section-content {
-    padding-top: 15px; /* Espacio debajo del título */
 }
