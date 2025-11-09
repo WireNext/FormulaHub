@@ -55,11 +55,11 @@ footer {
 }
 
 .section {
-    background-color: var(--card-background);
-    padding: 25px;
+    background-color: transparent;
+    padding: 0; 
     margin-bottom: 25px;
-    border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 0;
+    box-shadow: none;
 }
 
 .section h2 {
@@ -190,4 +190,50 @@ th {
         padding: 8px;
         font-size: 0.9em;
     }
+}
+
+details {
+    margin-bottom: 20px;
+    border-radius: 10px;
+    background-color: var(--card-background); /* Fondo de la tarjeta ahora en el details */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 25px; /* Padding aplicado a toda la tarjeta */
+}
+
+summary {
+    cursor: pointer;
+    list-style: none; /* Oculta el triángulo de detalle nativo */
+    /* Usamos 'list-style-type: none;' para ocultar el triángulo por defecto */
+    display: block; 
+    position: relative;
+    /* Ajuste para crear un "toggle" visual */
+    padding-right: 30px; 
+}
+
+summary h2 {
+    color: var(--f1-red);
+    padding-bottom: 10px;
+    margin-top: 0;
+    margin-bottom: 15px; /* Espacio entre título y contenido */
+    border-bottom: 2px solid var(--border-color);
+    display: inline-block;
+}
+
+/* Estilo para el ícono de abrir/cerrar (opcional) */
+summary::after {
+    content: '▶'; /* Triángulo a la derecha */
+    font-size: 1.2em;
+    position: absolute;
+    right: 0;
+    top: 5px;
+    transition: transform 0.2s ease;
+}
+
+details[open] > summary::after {
+    content: '▼'; /* Triángulo hacia abajo cuando está abierto */
+}
+
+/* El contenido real dentro del details (tablas/calendario) */
+.section-content {
+    padding-top: 15px; /* Espacio debajo del título */
 }
