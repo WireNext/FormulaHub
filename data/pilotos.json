@@ -188,5 +188,35 @@
     "puntos": 0, 
     "fotoURL": "assets/pilotos/antonelli.png",
     "logoURL": "assets/logos/mercedes.png"
+  },
+    {
+    "piloto": "Por Confirmar", 
+    "dorsal": 0,
+    "siglas": "TBC",
+    "equipo": "---", 
+    "motor": "---",
+    "puntos": 0, 
+    "fotoURL": "assets/pilotos/misterio.png",
+    "logoURL": "assets/logos/.png"
+  },
+    {
+    "piloto": "Por Confirmar", 
+    "dorsal": 0,
+    "siglas": "TBC",
+    "equipo": "---", 
+    "motor": "---",
+    "puntos": 0, 
+    "fotoURL": "assets/pilotos/misterio.png",
+    "logoURL": "assets/logos/.png"
+  },
+    {
+    "piloto": "Por Confirmar", 
+    "dorsal": 0,
+    "siglas": "TBC",
+    "equipo": "---", 
+    "motor": "---",
+    "puntos": 0, 
+    "fotoURL": "assets/pilotos/misterio.png",
+    "logoURL": "assets/logos/.png"
   }
 ]
