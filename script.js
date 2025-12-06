@@ -19,19 +19,13 @@ async function fetchData(url) {
 }
 
 /**
- * Función principal para cargar el contenido según la página actual.
+ * Función principal para cargar el contenido según los elementos presentes en la página.
  */
 async function cargarContenidoPagina() {
-    const path = window.location.pathname.split('/').pop();
-
     try {
-        if (path === 'pilotos.html' || path === 'constructores.html') {
-            const pilotos = await fetchData(URL_PILOTOS);
-            const constructores = await fetchData(URL_CONSTRUCTORES);
-            renderizarTablas(pilotos, constructores);
-        }
-
-        if (path === 'calendario.html') {
+        // --- 1. Cargar y renderizar Calendario (si existe el contenedor) ---
+        // Esto cubre a index.html
+        if (document.getElementById('calendario-list')) {
             const carreraUrls = await fetchData(URL_CARRERAS_INDEX);
             const carreraPromises = carreraUrls.map(url => fetchData(url));
             const calendario = await Promise.all(carreraPromises);
@@ -40,6 +34,14 @@ async function cargarContenidoPagina() {
             
             // Actualizar el estado del calendario cada segundo
             setInterval(() => renderizarCalendario(calendario, true), 1000);
+        }
+
+        // --- 2. Cargar y renderizar Tablas (si existe alguna tabla) ---
+        // Esto cubre a pilotos.html y constructores.html
+        if (document.getElementById('pilotos-table') || document.getElementById('constructores-table')) {
+            const pilotos = await fetchData(URL_PILOTOS);
+            const constructores = await fetchData(URL_CONSTRUCTORES);
+            renderizarTablas(pilotos, constructores);
         }
 
     } catch (error) {
@@ -87,13 +89,19 @@ function renderizarTablas(pilotosData, constructoresData) {
         constructoresOrdenados.forEach((c, index) => {
             const row = tbodyConstructores.insertRow();
             
-            row.insertCell().textContent = index + 1; // Posición
+            const posCell = row.insertCell();
+            posCell.textContent = index + 1;
+            posCell.classList.add('pos-col');
             
             const logoCell = row.insertCell();
             logoCell.innerHTML = `<img src="${c.logoURL}" alt="${c.equipo} logo" class="equipo-logo">`;
+            logoCell.classList.add('logo-col');
 
             row.insertCell().textContent = c.equipo;
-            row.insertCell().textContent = c.puntos;
+            
+            const puntosCell = row.insertCell();
+            puntosCell.textContent = c.puntos;
+            puntosCell.classList.add('puntos-col');
         });
     }
 }
@@ -104,7 +112,7 @@ function renderizarTablas(pilotosData, constructoresData) {
 function renderizarCalendario(calendario, soloActualizar = false) {
     const listContainer = document.getElementById('calendario-list');
     
-    if (!listContainer) return; // Salir si no estamos en calendario.html
+    if (!listContainer) return; // Salir si el contenedor no existe
 
     if (!soloActualizar) {
         listContainer.innerHTML = ''; 
@@ -116,6 +124,7 @@ function renderizarCalendario(calendario, soloActualizar = false) {
             card.className = 'carrera-card';
             card.id = `carrera-${carrera.id}`;
             
+            // Formatear la fecha a la zona horaria local del usuario
             const fechaLocal = new Date(carrera.fecha).toLocaleString('es-ES', { 
                 day: 'numeric', month: 'short', year: 'numeric', 
                 hour: '2-digit', minute: '2-digit', 
