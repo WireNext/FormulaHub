@@ -19,29 +19,28 @@ async function fetchData(url) {
 }
 
 /**
- * Función principal para cargar TODOS los datos de los JSONs
+ * Función principal para cargar el contenido según la página actual.
  */
-async function cargarTodosLosDatos() {
+async function cargarContenidoPagina() {
+    const path = window.location.pathname.split('/').pop();
+
     try {
-        // 1. Cargar datos estáticos (Pilotos y Constructores)
-        const pilotos = await fetchData(URL_PILOTOS);
-        const constructores = await fetchData(URL_CONSTRUCTORES);
+        if (path === 'pilotos.html' || path === 'constructores.html') {
+            const pilotos = await fetchData(URL_PILOTOS);
+            const constructores = await fetchData(URL_CONSTRUCTORES);
+            renderizarTablas(pilotos, constructores);
+        }
 
-        // **AQUÍ SE CALCULA LA POSICIÓN**
-        renderizarTablas(pilotos, constructores);
-        
-        // 2. Cargar el índice de carreras
-        const carreraUrls = await fetchData(URL_CARRERAS_INDEX);
-        
-        // 3. Cargar todas las carreras del índice en paralelo
-        const carreraPromises = carreraUrls.map(url => fetchData(url));
-        const calendario = await Promise.all(carreraPromises);
-
-        // 4. Renderizar y actualizar el calendario
-        renderizarCalendario(calendario);
-        
-        // Actualizar el estado del calendario cada segundo
-        setInterval(() => renderizarCalendario(calendario, true), 1000);
+        if (path === 'calendario.html') {
+            const carreraUrls = await fetchData(URL_CARRERAS_INDEX);
+            const carreraPromises = carreraUrls.map(url => fetchData(url));
+            const calendario = await Promise.all(carreraPromises);
+            
+            renderizarCalendario(calendario);
+            
+            // Actualizar el estado del calendario cada segundo
+            setInterval(() => renderizarCalendario(calendario, true), 1000);
+        }
 
     } catch (error) {
         console.error("Hubo un problema al cargar los datos:", error);
@@ -49,11 +48,9 @@ async function cargarTodosLosDatos() {
 }
 
 /**
- * Renderiza las tablas de Pilotos y Constructores, calculando la posición automáticamente.
+ * Renderiza las tablas de Pilotos y Constructores, SÓLO si el ID de tabla existe.
  */
 function renderizarTablas(pilotosData, constructoresData) {
-    
-    // --- Lógica de Ordenación ---
     
     // 1. Ordenar Pilotos por puntos (mayor a menor)
     const pilotosOrdenados = pilotosData.sort((a, b) => b.puntos - a.puntos);
@@ -64,52 +61,51 @@ function renderizarTablas(pilotosData, constructoresData) {
 
     // --- Campeonato de Pilotos ---
     const tbodyPilotos = document.querySelector('#pilotos-table tbody');
-    tbodyPilotos.innerHTML = '';
-    
-    pilotosOrdenados.forEach((p, index) => {
-        const row = tbodyPilotos.insertRow();
-        
-        // La posición es index + 1
-        row.insertCell().textContent = index + 1; 
-        
-        // Foto
-        const fotoCell = row.insertCell();
-        fotoCell.innerHTML = `<img src="${p.fotoURL}" alt="${p.piloto}" class="piloto-foto">`;
+    if (tbodyPilotos) {
+        tbodyPilotos.innerHTML = '';
+        pilotosOrdenados.forEach((p, index) => {
+            const row = tbodyPilotos.insertRow();
+            
+            row.insertCell().textContent = index + 1; // Posición
+            
+            const fotoCell = row.insertCell();
+            fotoCell.innerHTML = `<img src="${p.fotoURL}" alt="${p.piloto}" class="piloto-foto">`;
 
-        row.insertCell().textContent = p.piloto;
-        
-        // Logo y Equipo
-        const equipoCell = row.insertCell();
-        equipoCell.innerHTML = `<img src="${p.logoURL}" alt="${p.equipo} logo" class="equipo-logo">${p.equipo}`;
-        
-        row.insertCell().textContent = p.puntos;
-    });
+            row.insertCell().textContent = p.piloto;
+            
+            const equipoCell = row.insertCell();
+            equipoCell.innerHTML = `<img src="${p.logoURL}" alt="${p.equipo} logo" class="equipo-logo">${p.equipo}`;
+            
+            row.insertCell().textContent = p.puntos;
+        });
+    }
 
     // --- Campeonato de Constructores ---
     const tbodyConstructores = document.querySelector('#constructores-table tbody');
-    tbodyConstructores.innerHTML = '';
-    
-    constructoresOrdenados.forEach((c, index) => {
-        const row = tbodyConstructores.insertRow();
-        
-        // La posición es index + 1
-        row.insertCell().textContent = index + 1; 
-        
-        // Logo
-        const logoCell = row.insertCell();
-        logoCell.innerHTML = `<img src="${c.logoURL}" alt="${c.equipo} logo" class="equipo-logo">`;
+    if (tbodyConstructores) {
+        tbodyConstructores.innerHTML = '';
+        constructoresOrdenados.forEach((c, index) => {
+            const row = tbodyConstructores.insertRow();
+            
+            row.insertCell().textContent = index + 1; // Posición
+            
+            const logoCell = row.insertCell();
+            logoCell.innerHTML = `<img src="${c.logoURL}" alt="${c.equipo} logo" class="equipo-logo">`;
 
-        row.insertCell().textContent = c.equipo;
-        row.insertCell().textContent = c.puntos;
-    });
+            row.insertCell().textContent = c.equipo;
+            row.insertCell().textContent = c.puntos;
+        });
+    }
 }
 
 /**
- * Renderiza y actualiza las tarjetas del calendario. (SIN CAMBIOS)
+ * Renderiza y actualiza las tarjetas del calendario.
  */
 function renderizarCalendario(calendario, soloActualizar = false) {
     const listContainer = document.getElementById('calendario-list');
     
+    if (!listContainer) return; // Salir si no estamos en calendario.html
+
     if (!soloActualizar) {
         listContainer.innerHTML = ''; 
         // Primero ordenamos el calendario por fecha
@@ -139,6 +135,7 @@ function renderizarCalendario(calendario, soloActualizar = false) {
         });
     }
 
+    // Actualizar el estado de cada carrera (sea la carga inicial o la actualización de intervalo)
     calendario.forEach(carrera => {
         const card = document.getElementById(`carrera-${carrera.id}`);
         const statusElement = document.getElementById(`status-${carrera.id}`);
@@ -149,7 +146,7 @@ function renderizarCalendario(calendario, soloActualizar = false) {
 }
 
 /**
- * Calcula y actualiza el estado (Cuenta Regresiva, En Directo, Finalizada). (SIN CAMBIOS)
+ * Calcula y actualiza el estado (Cuenta Regresiva, En Directo, Finalizada).
  */
 function actualizarEstadoCarrera(carrera, card, statusElement) {
     const ahora = new Date().getTime();
@@ -180,9 +177,9 @@ function actualizarEstadoCarrera(carrera, card, statusElement) {
         // --- FINALIZADA (3 horas después del inicio) ---
         statusElement.textContent = '✅ FINALIZADA';
         statusElement.classList.add('finalizada');
-        card.style.opacity = 0.6; 
+        card.style.opacity = 0.8; 
     }
 }
 
 // Iniciar la aplicación al cargar el documento
-document.addEventListener('DOMContentLoaded', cargarTodosLosDatos);
+document.addEventListener('DOMContentLoaded', cargarContenidoPagina);

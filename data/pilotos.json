@@ -77,7 +77,7 @@
     "motor": "Mercedes",
     "puntos": 0, 
     "fotoURL": "assets/pilotos/albon.png",
-    "logoURL": "assets/logos/ Williams.png"
+    "logoURL": "assets/logos/williams.png"
   },
   {
     "piloto": "Carlos Sainz Jr.", 
@@ -87,7 +87,7 @@
     "motor": "Mercedes",
     "puntos": 0, 
     "fotoURL": "assets/pilotos/sainz.png",
-    "logoURL": "assets/logos/ Williams.png"
+    "logoURL": "assets/logos/williams.png"
   },
   {
     "piloto": "Pierre Gasly", 
